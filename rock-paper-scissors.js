@@ -57,6 +57,6 @@ function game() {
     //use conosle.log() to display a message showing the winner
 }
 
-const playerSelection = window.prompt("What's your choice (rock, paper, or scissors?");
+const playerSelection = window.prompt("Rock, paper, or scissors?");
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
