@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
           return "It's a Tie! You both chose Paper";
       } //Conditional statement for Scissors vs. Scissors 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "scissors") {
-          return "It's a Tie! You both chose Paper";
+          return "It's a Tie! You both chose Scissors";
       } // Conditional statment for scissors vs. rock 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
           return "You Lose! Rock beats Scissors.";
@@ -45,6 +45,18 @@ function playRound(playerSelection, computerSelection) {
     //return a string that declares the winner of the roundß
 }
 
-const playerSelection = "ROCK";
+function game() {
+    //add loop to run playRound function 5 times
+    for (i = 0; i < 5; i++) {
+        playRound();
+        // keep track of score
+    }
+  
+    //get choice from player using prompt method
+    // use console.log() to display the results of each round
+    //use conosle.log() to display a message showing the winner
+}
+
+const playerSelection = window.prompt("What's your choice (rock, paper, or scissors?");
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
