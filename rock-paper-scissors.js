@@ -48,15 +48,20 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     //add loop to run playRound function 5 times
     for (i = 0; i < 5; i++) {
-        playRound();
+        console.log(playRound(playerSelection, computerSelection));        
         // keep track of score
     }
   
-    //get choice from player using prompt method
+   
     // use console.log() to display the results of each round
     //use conosle.log() to display a message showing the winner
 }
+ //get choice from player using prompt method
+let playerSelection = window.prompt("Rock, paper, or scissors?");
+//add a message to display if player does not enter rock, paper, or scissors in prompt 
+if (playerSelection != "rock" || "paper" || "scissors") {
+    console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.")
+}
 
-const playerSelection = window.prompt("Rock, paper, or scissors?");
-const computerSelection = computerPlay();
+let computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
