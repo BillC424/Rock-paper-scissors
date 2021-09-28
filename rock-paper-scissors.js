@@ -1,13 +1,18 @@
 //create function computer play
 function computerPlay() {
     //define array that lists options
-    const choices = ["rock", "paper", "scissors"];
+    let choices = ["rock", "paper", "scissors"];
     //create a variable that chooses one of the three strings from the array at random
-        const random = Math.floor(Math.random() * choices.length);
+        let random = Math.floor(Math.random() * choices.length);
     //return either Rock, Paper, or Scissors
     return choices[random];
 }
-console.log(computerPlay());
+//console.log(computerPlay());
+
+// function for player prompt
+function playerChoice() {
+    let playerPick = window.prompt("Rock, paper, or scissors?");
+     return playerPick;}
 
 //create a function that plays a single round of rock,paper,scissors
 function playRound(playerSelection, computerSelection) {
@@ -41,27 +46,32 @@ function playRound(playerSelection, computerSelection) {
       else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
           return "You Win! Paper beats Rock";
       }
-
-    //return a string that declares the winner of the roundß
 }
 
 function game() {
     //add loop to run playRound function 5 times
     for (i = 0; i < 5; i++) {
-        console.log(playRound(playerSelection, computerSelection));        
+        
+        console.log(playRound(playerSelection, computerSelection));
         // keep track of score
-    }
+        
+   }
+}
   
    
     // use console.log() to display the results of each round
     //use conosle.log() to display a message showing the winner
-}
+
  //get choice from player using prompt method
-let playerSelection = window.prompt("Rock, paper, or scissors?");
+//let playerSelection = window.prompt("Rock, paper, or scissors?");
 //add a message to display if player does not enter rock, paper, or scissors in prompt 
-if (playerSelection != "rock" || "paper" || "scissors") {
-    console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.")
-}
+//if (playerSelection != "rock" || "paper" || "scissors") {
+  //  console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.");
+//}
+
+
 
 let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+let playerSelection = playerChoice();
+//console.log(playRound(playerSelection, computerSelection))
+game();
