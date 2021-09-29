@@ -11,46 +11,49 @@ function computerPlay() {
 // function for player prompt
 function playerChoice() {
     //get choice from player using prompt method
-    let playerPick = window.prompt("Rock, paper, or scissors?");
-    //if (playerPick != "rock" || "paper" || "scissors") {
-      //  console.log("You did not pick rock, paper, or scissors! What are you doing?");
-    //}
-     return playerPick;}
+    let playerPick = window.prompt("Rock, paper, or scissors?", " ");
+    //change playerPick string to lower case
+    let lowerPlayerPick =  playerPick.toLowerCase();
+    //Display error message if player doesn't pick rock, paper, or scissors
+    if (lowerPlayerPick != "rock" || "paper" || "scissors") {
+        console.log("You did not pick rock, paper, or scissors! Refresh the browser to restart the game.");
+    }
+     return lowerPlayerPick;}
 
 //create a function that plays a single round of rock,paper,scissors
 function playRound(playerSelection, computerSelection) {
 
     //Conditional statement for Rock vs. Paper
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper" ) { 
+    if (playerSelection === "rock" && computerSelection === "paper" ) { 
         computerScore++;
        return "You Lose! Paper beats Rock";
        //Conditional statement for Paper vs. Scissors
-      } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+      } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++;
           return "You Lose! Scissors beats Paper";
           //Conditional statement for Rock vs. Scissors
-      } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+      } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
           return "You Win! Rock beats Scissors";
           //Conditional statement for Rock vs. Rock
-      } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "rock") {
+      } else if (playerSelection === "rock" && computerSelection === "rock") {
           return "It's a Tie! You both chose Rock";
       } //Conditional statement for Paper vs. Paper
-      else if (playerSelection.toLowerCase() === "paper" && computerSelection === "paper") {
+      else if (playerSelection === "paper" && computerSelection === "paper") {
           return "It's a Tie! You both chose Paper";
       } //Conditional statement for Scissors vs. Scissors 
-      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "scissors") {
+      else if (playerSelection === "scissors" && computerSelection === "scissors") {
           return "It's a Tie! You both chose Scissors";
       } // Conditional statment for scissors vs. rock 
-      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+      else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++;
           return "You Lose! Rock beats Scissors";
       } // Conditional statment for scissors vs. paper 
-      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+      else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
           return "You Win! Scissors beats Paper";
       } // conditional statement for paper vs. rock 
-      else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+      else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
           return "You Win! Paper beats Rock";
       }
@@ -77,16 +80,12 @@ function game() {
             console.log("You win!");
         } else if (i>=4 && playerScore === computerScore) {
             console.log("It's a tie!")
-        } 
+            // End game if player doesn't pick rock, paper, or scissors
+        } else if (playerSelection != "rock" || "paper" || "scissors") {
+            break;
+        }
     }
 }
   
-//let playerSelection = window.prompt("Rock, paper, or scissors?");
-//add a message to display if player does not enter rock, paper, or scissors in prompt 
-//if (playerSelection != "rock" || "paper" || "scissors") {
-  //  console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.");
-//}
-
-
-//console.log(playRound(playerSelection, computerSelection))
+// Run game 
 game();
