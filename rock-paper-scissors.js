@@ -1,22 +1,24 @@
 //create function computer play
 function computerPlay() {
-    //define array that lists options
+    //create a variable with array that lists options for computer
     let choices = ["rock", "paper", "scissors"];
     //create a variable that chooses one of the three strings from the array at random
         let random = Math.floor(Math.random() * choices.length);
     //return either Rock, Paper, or Scissors
     return choices[random];
 }
-//console.log(computerPlay());
 
 // function for player prompt
 function playerChoice() {
+    //get choice from player using prompt method
     let playerPick = window.prompt("Rock, paper, or scissors?");
+    //if (playerPick != "rock" || "paper" || "scissors") {
+      //  console.log("You did not pick rock, paper, or scissors! What are you doing?");
+    //}
      return playerPick;}
 
 //create a function that plays a single round of rock,paper,scissors
 function playRound(playerSelection, computerSelection) {
-    //Make your function’s playerSelection parameter case-insensitive
 
     //Conditional statement for Rock vs. Paper
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper" ) { 
@@ -69,20 +71,16 @@ function game() {
         console.log(playerScore);
         
         //use conosle.log() to display a message showing the winner
-        if (i>=5 && computerScore > playerScore) {
+        if (i>=4 && computerScore > playerScore) {
             console.log("You lose!");
-        } else if (i>=5 && playerScore > computerScore) {
+        } else if (i>=4 && playerScore > computerScore) {
             console.log("You win!");
-        } else {
+        } else if (i>=4 && playerScore === computerScore) {
             console.log("It's a tie!")
-        }
-   }
+        } 
+    }
 }
   
-   
-
-
- //get choice from player using prompt method
 //let playerSelection = window.prompt("Rock, paper, or scissors?");
 //add a message to display if player does not enter rock, paper, or scissors in prompt 
 //if (playerSelection != "rock" || "paper" || "scissors") {
