@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
           return "You Win! Paper beats Rock";
       }
 }
-
+        //keep track of score
         let computerScore = 0;
         let playerScore = 0;
 
@@ -64,17 +64,23 @@ function game() {
         let playerSelection = playerChoice();
         
         console.log(playRound(playerSelection, computerSelection));
-        // keep track of score
+        // use console.log() to display the results of each round
         console.log(computerScore);
         console.log(playerScore);
         
-        
+        //use conosle.log() to display a message showing the winner
+        if (i>=5 && computerScore > playerScore) {
+            console.log("You lose!");
+        } else if (i>=5 && playerScore > computerScore) {
+            console.log("You win!");
+        } else {
+            console.log("It's a tie!")
+        }
    }
 }
   
    
-    // use console.log() to display the results of each round
-    //use conosle.log() to display a message showing the winner
+
 
  //get choice from player using prompt method
 //let playerSelection = window.prompt("Rock, paper, or scissors?");
