@@ -19,13 +19,16 @@ function playRound(playerSelection, computerSelection) {
     //Make your function’s playerSelection parameter case-insensitive
 
     //Conditional statement for Rock vs. Paper
-    if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper" ) {
+    if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper" ) { 
+        computerScore++;
        return "You Lose! Paper beats Rock";
        //Conditional statement for Paper vs. Scissors
       } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+        computerScore++;
           return "You Lose! Scissors beats Paper";
           //Conditional statement for Rock vs. Scissors
       } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+        playerScore++;
           return "You Win! Rock beats Scissors";
           //Conditional statement for Rock vs. Rock
       } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "rock") {
@@ -38,23 +41,33 @@ function playRound(playerSelection, computerSelection) {
           return "It's a Tie! You both chose Scissors";
       } // Conditional statment for scissors vs. rock 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+        computerScore++;
           return "You Lose! Rock beats Scissors";
       } // Conditional statment for scissors vs. paper 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+        playerScore++;
           return "You Win! Scissors beats Paper";
       } // conditional statement for paper vs. rock 
       else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+        playerScore++;
           return "You Win! Paper beats Rock";
       }
 }
+
+        let computerScore = 0;
+        let playerScore = 0;
 
 function game() {
     //add loop to run playRound function 5 times
     for (i = 0; i < 5; i++) {
         let computerSelection = computerPlay();
         let playerSelection = playerChoice();
+        
         console.log(playRound(playerSelection, computerSelection));
         // keep track of score
+        console.log(computerScore);
+        console.log(playerScore);
+        
         
    }
 }
@@ -70,7 +83,6 @@ function game() {
   //  console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.");
 //}
 
-let computerScore;
-let playerScore;
+
 //console.log(playRound(playerSelection, computerSelection))
 game();
