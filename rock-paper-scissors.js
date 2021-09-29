@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
           return "It's a Tie! You both chose Scissors";
       } // Conditional statment for scissors vs. rock 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
-          return "You Lose! Rock beats Scissors.";
+          return "You Lose! Rock beats Scissors";
       } // Conditional statment for scissors vs. paper 
       else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
           return "You Win! Scissors beats Paper";
@@ -51,7 +51,8 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     //add loop to run playRound function 5 times
     for (i = 0; i < 5; i++) {
-        
+        let computerSelection = computerPlay();
+        let playerSelection = playerChoice();
         console.log(playRound(playerSelection, computerSelection));
         // keep track of score
         
@@ -69,9 +70,7 @@ function game() {
   //  console.log("You did not pick rock, paper, or scissors. Please refresh the browser and try again.");
 //}
 
-
-
-let computerSelection = computerPlay();
-let playerSelection = playerChoice();
+let computerScore;
+let playerScore;
 //console.log(playRound(playerSelection, computerSelection))
 game();
