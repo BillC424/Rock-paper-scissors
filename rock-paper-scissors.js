@@ -11,13 +11,9 @@ function computerPlay() {
 // function for player prompt
 function playerChoice() {
     //get choice from player using prompt method
-    let playerPick = window.prompt("Rock, paper, or scissors?", " ");
+    let playerPick = window.prompt("Rock, paper, or scissors?");
     //change playerPick string to lower case
     let lowerPlayerPick =  playerPick.toLowerCase();
-    //Display error message if player doesn't pick rock, paper, or scissors
-    if (lowerPlayerPick != "rock" || "paper" || "scissors") {
-        console.log("You did not pick rock, paper, or scissors! Refresh the browser to restart the game.");
-    }
      return lowerPlayerPick;}
 
 //create a function that plays a single round of rock,paper,scissors
@@ -67,25 +63,29 @@ function game() {
     for (i = 0; i < 5; i++) {
         let computerSelection = computerPlay();
         let playerSelection = playerChoice();
-        
         console.log(playRound(playerSelection, computerSelection));
+        
         // use console.log() to display the results of each round
         console.log(computerScore);
         console.log(playerScore);
         
-        //use conosle.log() to display a message showing the winner
-        if (i>=4 && computerScore > playerScore) {
+        // End game if player doesn't pick rock, paper, or scissors
+        if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+            console.log("You did not pick rock, paper, or scissors! Refresh the browser to restart the game.");
+            break;
+            //use conosle.log() to display a message showing the result of the 5 rounds
+        } else if (i>=4 && computerScore > playerScore) {
             console.log("You lose!");
         } else if (i>=4 && playerScore > computerScore) {
             console.log("You win!");
         } else if (i>=4 && playerScore === computerScore) {
             console.log("It's a tie!")
-            // End game if player doesn't pick rock, paper, or scissors
-        } else if (playerSelection != "rock" || "paper" || "scissors") {
-            break;
+           
         }
+
     }
 }
   
 // Run game 
 game();
+
