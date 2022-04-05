@@ -8,13 +8,7 @@ function computerPlay() {
     return choices[random];
 }
 
-// function for player prompt
-function playerChoice() {
-    //get choice from player using prompt method
-    let playerPick = window.prompt("Rock, paper, or scissors?");
-    //change playerPick string to lower case
-    let lowerPlayerPick =  playerPick.toLowerCase();
-     return lowerPlayerPick;}
+
 
 //create a function that plays a single round of rock,paper,scissors
 function playRound(playerSelection, computerSelection) {
@@ -22,43 +16,48 @@ function playRound(playerSelection, computerSelection) {
     //Conditional statement for Rock vs. Paper
     if (playerSelection === "rock" && computerSelection === "paper" ) { 
         computerScore++;
-       return "You Lose! Paper beats Rock";
+       return console.log("You Lose! Paper beats Rock");
        //Conditional statement for Paper vs. Scissors
       } else if (playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++;
-          return "You Lose! Scissors beats Paper";
+          return console.log("You Lose! Scissors beats Paper");
           //Conditional statement for Rock vs. Scissors
       } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
-          return "You Win! Rock beats Scissors";
+          return console.log("You Win! Rock beats Scissors");
           //Conditional statement for Rock vs. Rock
       } else if (playerSelection === "rock" && computerSelection === "rock") {
-          return "It's a Tie! You both chose Rock";
+          return console.log("It's a Tie! You both chose Rock");
       } //Conditional statement for Paper vs. Paper
       else if (playerSelection === "paper" && computerSelection === "paper") {
-          return "It's a Tie! You both chose Paper";
+          return console.log("It's a Tie! You both chose Paper");
       } //Conditional statement for Scissors vs. Scissors 
       else if (playerSelection === "scissors" && computerSelection === "scissors") {
-          return "It's a Tie! You both chose Scissors";
+          return console.log("It's a Tie! You both chose Scissors");
       } // Conditional statment for scissors vs. rock 
       else if (playerSelection === "scissors" && computerSelection === "rock") {
         computerScore++;
-          return "You Lose! Rock beats Scissors";
+          return console.log("You Lose! Rock beats Scissors");
       } // Conditional statment for scissors vs. paper 
       else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
-          return "You Win! Scissors beats Paper";
+          return console.log("You Win! Scissors beats Paper");
       } // conditional statement for paper vs. rock 
       else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
-          return "You Win! Paper beats Rock";
+          return console.log("You Win! Paper beats Rock");
       }
 }
         //keep track of score
-        let computerScore = 0;
-        let playerScore = 0;
 
-function game() {
+        let computerScore = 0;
+let playerScore = 0;
+        
+        const buttons = document.querySelectorAll('button');
+
+buttons.forEach(  (button) => { button.addEventListener ('click', e => playRound (e.target.id, computerPlay() )   );  }   );
+
+/*function game() {
     //add loop to run playRound function 5 times
     for (i = 0; i < 5; i++) {
         let computerSelection = computerPlay();
@@ -87,5 +86,5 @@ function game() {
 }
   
 // Run game 
-game();
+game();*/
 
