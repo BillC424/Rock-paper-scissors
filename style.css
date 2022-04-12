@@ -1,0 +1,24 @@
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end
+    ;
+}
+
+button {
+    background-color: lightblue;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 4px;
+    font-weight: bold;
+   
+}
+
+#results {
+    border-color: black;
+    border-width: 4px ;
+    border-style: solid;
+    padding: 50px;
+}
