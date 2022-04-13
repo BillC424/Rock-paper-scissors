@@ -49,18 +49,38 @@ function playRound(playerSelection, computerSelection) {
       }
 }
         //keep track of score
-
         let computerScore = 0;
         let playerScore = 0;
+
+        // Display score for each player
+        function getScore () {
+            document.getElementById('#cScore');
+            cScore.innerHTML = "Computer score:  " + computerScore
+    
+            document.getElementById('#pScore');
+            pScore.innerHTML = "Player score:  " + playerScore
+        }
+
+        function endGame () {
+            if (computerScore === 5) {
+                location.reload();
+                alert("You lose!");
+            } else if (playerScore === 5) {
+                location.reload();
+                alert("You win!");
+        }
+    }
+
+    
 
         // Event for playing game 
 
         const buttons = document.querySelectorAll('button');
         
         buttons.forEach(  (button) => { button.addEventListener ('click', e => playRound (e.target.id, computerPlay() )   );  }   );
+        
+        buttons.forEach(  (button) => { button.addEventListener ('click', e => getScore() );  }   );
 
-        if (computerScore === 5) {
-            console.log("You lose!");
-        } else if (playerScore === 5) {
-            console.log("You win!");
-        }
+        buttons.forEach(  (button) => { button.addEventListener ('click', e => setTimeout(endGame, 0.5) );  }   );
+
+        
