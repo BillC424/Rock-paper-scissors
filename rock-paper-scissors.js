@@ -81,6 +81,6 @@ function playRound(playerSelection, computerSelection) {
         
         buttons.forEach(  (button) => { button.addEventListener ('click', e => getScore() );  }   );
 
-        buttons.forEach(  (button) => { button.addEventListener ('click', e => setTimeout(endGame, 1.5) );  }   );
+        buttons.forEach(  (button) => { button.addEventListener ('click', e => setTimeout(endGame, 2) );  }   );
 
         
